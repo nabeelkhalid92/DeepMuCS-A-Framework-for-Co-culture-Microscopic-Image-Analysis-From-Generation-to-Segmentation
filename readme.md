@@ -31,3 +31,21 @@ For further information on installation and usage, see the [detectron2-ResNeSt d
 If you encounter issues like "Not compiled with GPU support" or "Detectron2 CUDA Compiler: not available," ensure CUDA is properly installed:
 ```bash
 python -c 'import torch; from torch.utils.cpp_extension import CUDA_HOME; print(torch.cuda.is_available(), CUDA_HOME)'
+
+This should print valid outputs confirming CUDA availability.
+
+## Data
+
+You can download the dataset from the following link:
+
+[DeepMuCS Dataset Download](https://cloud.dfki.de/owncloud/index.php/s/ZRFRjQgmxo8ocqp)
+
+## Usage
+
+### Register LIVECell Dataset
+
+Register the dataset via the detectron2 Python API by adding the following code to the `train_net.py` file:
+
+```python
+from detectron2.data.datasets import register_coco_instances
+register_coco_instances("dataset_name", {}, "/path/coco/annotations.json", "path/to/image/dir")
