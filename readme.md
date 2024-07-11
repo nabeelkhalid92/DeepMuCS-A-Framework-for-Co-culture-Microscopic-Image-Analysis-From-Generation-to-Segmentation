@@ -14,7 +14,7 @@ In the past, there existed minimal progress related to cell-type aware segmentat
 
 ## Installation
 
-### Detectron2-ResNeSt Installation
+### DeepMuCS Installation
 
 Do not install the original detectron2 as it conflicts with the ResNeSt code. If it is already installed, uninstall it or create a new virtual environment.
 
