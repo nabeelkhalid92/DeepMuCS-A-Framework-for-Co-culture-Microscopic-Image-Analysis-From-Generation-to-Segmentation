@@ -14,33 +14,20 @@ In the past, there existed minimal progress related to cell-type aware segmentat
 
 ## Installation
 
-1. Clone the repository:
+### Detectron2-ResNeSt Installation
+
+Do not install the original detectron2 as it conflicts with the ResNeSt code. If it is already installed, uninstall it or create a new virtual environment.
+
+1. Clone and install detectron2-ResNeSt:
     ```bash
-    git clone https://github.com/yourusername/DeepMuCS.git
-    ```
-2. Navigate to the project directory:
-    ```bash
-    cd DeepMuCS
-    ```
-3. Install the required dependencies:
-    ```bash
-    pip install -r requirements.txt
+    git clone https://github.com/chongruo/detectron2-ResNeSt
+    python -m pip install -e detectron2-ResNeSt
     ```
 
-## Usage
+For further information on installation and usage, see the [detectron2-ResNeSt documentation](https://github.com/chongruo/detectron2-ResNeSt).
 
-1. Prepare your input images and place them in the `input_images` directory.
-2. Run the image generation pipeline:
-    ```bash
-    python generate_images.py
-    ```
-3. Perform cell segmentation on the generated images:
-    ```bash
-    python segment_cells.py
-    ```
+### Common Installation Issues
 
-## Example
-
-Here is an example of how to run the framework:
+If you encounter issues like "Not compiled with GPU support" or "Detectron2 CUDA Compiler: not available," ensure CUDA is properly installed:
 ```bash
-python main.py --input_dir path/to/input_images --output_dir path/to/output_images
+python -c 'import torch; from torch.utils.cpp_extension import CUDA_HOME; print(torch.cuda.is_available(), CUDA_HOME)'
